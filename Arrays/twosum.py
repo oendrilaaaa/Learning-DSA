@@ -1,0 +1,9 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for i in range(0, len(nums), 1):
+            remaining = target - nums[i]
+            if remaining not in hashmap:
+                hashmap[nums[i]] = i
+            else:
+                return hashmap[remaining], i
